@@ -31,7 +31,7 @@ public class FrmCalcularFig extends JFrame {
         lblDato1 = new JLabel("Dato 1:");
         lblDato1.setBounds(10, 50, 100, 30);
         add(lblDato1);
-
+ 
         txtDato1 = new JTextField();
         txtDato1.setBounds(120, 50, 100, 30);
         add(txtDato1);
@@ -58,7 +58,7 @@ public class FrmCalcularFig extends JFrame {
         add(btnCalcular);
 
         lblResultado = new JLabel("Resultado: ");
-        lblResultado.setBounds(10, 210, 300, 30);
+        lblResultado.setBounds(10, 210, 600, 80);
         add(lblResultado);
 
         // Acción cuando cambia la selección en el ComboBox
@@ -121,21 +121,21 @@ public class FrmCalcularFig extends JFrame {
                 double largo = Double.parseDouble(txtDato1.getText());
                 double ancho = Double.parseDouble(txtDato2.getText());
                 Rectangulo rectangulo = new Rectangulo(largo, ancho);
-                lblResultado.setText("Área: " + rectangulo.calcularArea() + ", Perímetro: " + rectangulo.calcularPerimetro());
+                lblResultado.setText("<html>Área: " + rectangulo.calcularArea() + "<br>Perímetro: " + rectangulo.calcularPerimetro());
             } else if (figuraSeleccionada.equals("Cuadrado")) {
                 double lado = Double.parseDouble(txtDato1.getText());
                 Cuadrado Cuadrado = new Cuadrado(lado);
-                lblResultado.setText("Área: " + Cuadrado.calcularArea() + ", Perímetro: " + Cuadrado.calcularPerimetro());
+                lblResultado.setText("<html>Área: " + Cuadrado.calcularArea() + "<br>Perímetro: " + Cuadrado.calcularPerimetro());
             } else if (figuraSeleccionada.equals("Círculo")) {
                 double radio = Double.parseDouble(txtDato1.getText());
                 Circulo circulo = new Circulo(radio);
-                lblResultado.setText("Área: " + circulo.calcularArea() + ", Perímetro: " + circulo.calcularPerimetro());
+                lblResultado.setText("<html>Área: " + circulo.calcularArea() + "<br>Perímetro: " + circulo.calcularPerimetro());
             } else if (figuraSeleccionada.equals("Triángulo")) {
                 double ladoA = Double.parseDouble(txtDato1.getText());
                 double ladoB = Double.parseDouble(txtDato2.getText());
                 double ladoC = Double.parseDouble(txtDato3.getText());
                 Triangulo triangulo = new Triangulo(ladoA, ladoB, ladoC);
-                lblResultado.setText("Área: " + triangulo.calcularArea() + ", Perímetro: " + triangulo.calcularPerimetro() + ", Tipo: " + triangulo.tipoTriangulo());
+                lblResultado.setText("<html>Área: " + triangulo.calcularArea() + "<br>Perímetro: " + triangulo.calcularPerimetro() + "<br>Tipo: " + triangulo.tipoTriangulo() + "</html>");
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Introducir solo valores numéricos");
